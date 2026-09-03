@@ -1,0 +1,563 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(45, 30, 37);
+    background: rgb(45, 30, 37);
+}
+
+
+:root {
+  --about-height: 150px;
+}
+
+.imageCarousel {
+    position: relative;
+    width: 100%;
+    margin: 0px;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 25px;
+    background: rgb(45, 30, 37);
+    align-items: center;
+    margin-top: 50px;
+    z-index: 5;
+    display: flex;
+}
+
+.youtubeVideo {
+    position: relative;
+    border-radius: 25px;
+    height: 500px;
+    margin-top: 0px;
+}
+.youtubeVideoSpan {
+    position: relative;
+    border-radius: 25px;
+    height: 200px;
+    margin-top: 0px;
+}
+
+.aboutArrow {
+    position: absolute;
+  height: 25px;
+  width: 25px;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 0px;
+  z-index: 90;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
+.wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* First section inside wrapper grows; bottom about section keeps fixed height */
+.wrapper > .textOverlaySection {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper > #about {
+  flex: 0 0 auto;
+}
+
+
+
+.aboutBtn {
+    z-index: 90;
+}
+
+#aboutToggle {
+    position: absolute;
+    display: none;
+}
+
+@keyframes headerScrolled {
+  from {
+     border-top-left-radius: 25px;
+     border-top-right-radius: 25px;
+  }
+  to {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
+
+
+#aboutToggle:checked + .aboutBtn .aboutArrow {
+    transform: rotate(180deg) translateY(3px);
+}
+
+.secondCont {
+    margin-top: 23px;
+    width: 100%;
+    height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+    border-left: none;
+  border-right: none;
+  margin-top: 20px;
+  height: 530px;
+  background: rgb(45, 30, 37);
+}
+
+.paragraphSection {
+        margin-top: -50px;
+    width: 100%;
+
+    height: auto;
+    background: rgb(45, 30, 37);
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+    border-left: none;
+  border-right: none;
+  border-radius: 25px; 
+  margin-top: 20px;
+  height: auto;
+}
+
+.secondCont h1 {
+    z-index: 90;
+}
+
+.fourthCont {
+    position: fixed;    
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgb(45, 30, 37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+    z-index: 0;
+}
+
+.firstImg {
+    width: calc(100% - 58px);
+    position: absolute;
+    object-fit:cover;
+    object-position: center 80%;
+    top: 83px;
+    filter: brightness(65%);
+    z-index: 90;    
+      border-radius: 25px;
+  border-left: none;
+  border-right: none;
+  margin-left: 30px;
+  min-height: 420px;
+}
+
+.collumnSpan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0px; 
+    z-index: 100; 
+}
+
+#lecturesCollumnSpan {
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+.collumnChild {
+    padding: 0px;
+    display: block;
+    height: auto;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: transparent;
+    height: auto;
+    min-height: 550px;
+    z-index: 100; 
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;    
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    position: relative;
+}
+
+.collumnChild.inactive-speaker {
+    opacity: 0.45;
+}
+
+.collumnChild.active-speaker {
+    opacity: 1;
+}
+
+.overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+#collumnChildComp:hover .collumnH {
+    text-decoration: underline;
+}
+
+.collumnH {
+    color: white;
+}
+.collumnP {
+    color: white;
+    font-size: 1.3rem;
+}
+.collumnImg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.collumnChild:first-of-type {
+    margin-left: 20px;
+}
+.collumnChild:last-of-type {
+    margin-right: 20px;
+}
+
+
+.textOverlaySection {
+    /* align-items: center; */
+    margin: auto;
+    z-index: 90;    
+      border-left: none;
+  border-right: none;
+}
+
+
+
+
+.centerT {
+    position: relative;
+    z-index: 80;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    font-size: clamp(1rem, 4vw, 2rem);
+    text-align: center;
+    top: 10%;
+    z-index: 95;
+}
+
+.centerT.second {
+    margin-top: 0px;
+}
+
+.centerT.text {
+    margin-bottom: 20px;
+    margin-top:0px; 
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-style: italic;
+}
+
+.youtube {
+    height: 100%;
+    width: auto;
+    
+}
+
+.plaintext {
+    position: relative;
+    z-index: 80;
+    color: white;
+    top:20px;
+    display: flex;      
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+    text-align: left;
+    z-index: 95;
+    line-height: 1.4;
+    text-indent: 40px;
+}
+
+.paragraphImgRow {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    margin: 20px auto 40px;
+}
+
+.paragraphImg {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.imgRowParent {
+    display: block;
+    width: 100%;
+}
+
+.imgCredit {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+#about {
+    display: flex;
+    height: var(--about-height);
+
+}
+
+.firstH p {
+    display: block;
+    margin: auto;
+}
+
+.carousel-track {
+    display: flex;
+    margin: auto;
+    
+    width: 60%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: relative;
+    top: 50%;
+    height: 60px;
+    width: 60px;
+    transform: translateY(-50%);
+    background: rgb(45, 30, 37);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+    border-radius: 50%;
+}
+
+.noSpill {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: rgb(45, 30, 37);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 2rem;
+    z-index: 9;
+}
+
+.carousel-btn:hover {
+    background: rgba(255,255,255,0.5);
+    color: rgb(45, 30, 37);
+}
+
+.componentsFirstImage {
+    width: calc(100% - 58px);
+    position: absolute;
+    object-fit:cover;
+    object-position: center 80%;
+    top: 83px;
+    filter: brightness(65%);
+    z-index: 90;    
+    border-radius: 25px;
+    border-left: none;
+    border-right: none;
+    margin-left: 30px;
+    height: 227px;
+    object-position: center 38%;
+}
+
+.popup {
+    visibility: hidden;
+}
+
+.prev {
+    left: 0px;
+}
+
+.next {
+    right: 0px;
+}
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+}
+
+.profile-stage {
+    position: relative;
+    min-height: 720px;
+}
+
+.person-profile {
+    position: absolute;
+    transition: opacity 0.2s ease;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.person-profile.hidden {
+    opacity: 0;
+}
+
+
+@media screen and (min-width: 919px) {
+    .textOverlaySection {
+      width: 70%;  
+      height: auto;
+    }
+    .firstImg {
+        height: calc(100% - var(--about-height) - 95px);
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .collumnSpan {
+    width: 80%;
+    margin-left: 10%;
+    flex-direction:column;
+    }
+
+    .collumnChild {
+        min-height: auto;
+    }
+
+    .componentsFirstImage {
+        height:200px;
+        width: 80%;
+        margin-left: 10%;
+        top: 20px;
+    }
+}
+    
+@media screen and (max-width: 920px) {
+    .textOverlaySection {
+        width: 95%;  
+        height: auto;
+    }
+    .wrapper {
+        height: 400px;
+        min-height: 400px;
+    }
+
+    .centerT {
+        font-size: clamp(1.35rem, 5vw, 2rem);
+        width: 80%;
+        margin-left: 10%;
+        top: 275px;
+    }
+
+    
+    
+    #yearChanger {
+        padding-bottom: 200px;
+    }
+    #about {
+        margin-top: 325px;
+    }
+
+    .centerT.text {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .firstImg {
+        height: 400px;
+        border-radius: 25px;
+        top: 25px;
+        width: 80%;
+        margin-left: 10%;
+    }
+    .plaintext {
+        text-align: center;
+    }
+    
+    .paragraphSection {
+        margin-top: 150px;
+
+    }
+
+    .paragraphImgRow {
+        flex-direction: column;
+    }
+
+    .youtubeVideo {
+        width: 80%;
+        margin-left: 10%;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .secondCont {
+        height: auto;
+    }
+
+    .paragraphImg {
+        width: 100%;
+        height: auto;
+    }
+    .aboutArrow {
+        display: none;
+    }
+
+    .imageCarousel,
+    .carousel-track img {
+        height: 360px;
+    }
+}
