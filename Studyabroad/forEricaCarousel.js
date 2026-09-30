@@ -42,25 +42,3 @@ document.querySelectorAll('.imageCarousel').forEach(carousel => {
         updateCarousel();  
     }, 10000);
 });
-
-function copyText() {
-  const inputElement = document.getElementById("textToCopy");
-  const popup = document.getElementById("popup");
-
-  try {
-    // Copy text to clipboard
-    await navigator.clipboard.writeText(inputElement.value);
-
-    // Show the popup
-    popup.classList.add("show");
-
-    // Hide the popup after 1.5 seconds (1500 milliseconds)
-    setTimeout(() => {
-      popup.classList.remove("show");
-    }, 1500);
-    
-  } catch (err) {
-    return;
-  }
-}
-
